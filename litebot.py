@@ -12,6 +12,7 @@ import logging
 import re
 import threading
 import os
+import sys
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from selenium import webdriver
@@ -25,6 +26,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 # ============================================================
 BASE_URL = "https://litepick.io"
 BASE_BET = 0.000001
+
+# Ampidino io mba hiseho ny logs rehetra
+sys.stdout.reconfigure(line_buffering=True)
 
 logging.basicConfig(
     level=logging.INFO,
@@ -1035,4 +1039,4 @@ if __name__ == "__main__":
     print("=" * 60)
     print(f"📊 Interface: http://localhost:{port}")
     print("=" * 60)
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(host='0.0.0.0', port=port)
